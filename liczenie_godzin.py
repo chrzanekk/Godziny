@@ -23,22 +23,19 @@ def input_date():
         if k == day_of_week:
             print(day_of_week_dict[k])
             break
-
-
-    #print(day_of_week)
     return day_of_week
 
 
 #simple function that convert inputed date to day of week
-def godziny():
-    godz_pocz = int(input("Godzina rozpoczęcia pracy: "))
-    godz_konc = int(input("Godzina zakonczenia pracy: "))
-    ilosc = godz_konc - godz_pocz
-    print("Czas pracy to:",ilosc, "godzin")
+def hours():
+    start_hour = int(input("Input start hour. / Godzina rozpoczęcia pracy: "))
+    end_hour = int(input("Input end hour. / Godzina zakonczenia pracy: "))
+    count = godz_konc - godz_pocz
+    print("Work time is / Czas pracy to:", count, "hours / godzin. ")
     return ilosc
 
 
-godziny()
 input_date()
-    
+hours()
+
 

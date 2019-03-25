@@ -1,0 +1,10 @@
+Done:
+1. Input date 
+2. Recognize day of week after input date.
+3. Input start and end hours of work.
+4. Count a quantity of worked hours
+
+To do:
+1. Function to check if work is in the same day (if not then count hours based on start date and end date of work (working in night - rare but still posibble))
+2. Function to check what kind of addition to payment shoulde be used (mon-fri: 8 + (9h to 10h * 50%) + (10h+ * 100%)
+3. Print summary information about addition and working hours.
