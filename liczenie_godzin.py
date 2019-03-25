@@ -1,7 +1,7 @@
 #simple script to count work hours
 #now count only real time of work.
-#in future i want to add some impruvements like date input with hours
-#final job is to count work hours with additional hours and add 50% and 100% extra paymnet
+#you can input date. i use it to check what day of week it is and coresponding to that day cout and addition to payment
+#final job is to count work hours with additional hours and add 50% and 100% extra payment
 
 import calendar
 
