@@ -21,7 +21,7 @@ def date_time_input():
 # #simple function that convert inputed date to day of week
 def check_date(y, m, d):
     day_of_week = calendar.weekday(y, m, d)
-    day_of_week_dict = {0: "Monday/Poniedzialek",
+    day_of_week_dict = {0: "Monday/Poniedziałek",
                         1: "Tuesday/Wtorek",
                         2: "Wednesday/Środa",
                         3: "Thursday/Czwartek",
@@ -65,8 +65,12 @@ print("Start work at: ", what_day1)
 print("End work at: ", what_day2)
 
 #code for counting hours from date and time entered above.
+start_day = date1[0]
+start_month = date1[1]
 start_hour = date1[3]
 start_min = date1[4]
+end_day = date2[0]
+end_month = date2[1]
 end_hour = date2[3]
 end_min = date2[4]
 
