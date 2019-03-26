@@ -4,30 +4,21 @@
 #final job is to count work hours with additional hours and add 50% and 100% extra payment
 
 import calendar
+import datetime
 
-class setDateTime:
-    def __init__(self, day, month, year, hour, minute):
-        self.day = day
-        self.month = month
-        self.year = year
-        self.hour = hour
-        self.minute = minute
 
-    def setDate(self):
-        InputDate = input("Set date in format DD/MM/YYYY: ")
-        day, month, year = map(int, InputDate.split("/"))
-        Date1 = {"Day: ": day, "Month: ": month, "Year: ": year}
-        return Date1
-
-    def setTime(self):
-        InputTime = input("Set time in format HH:MM: ")
-        hour, minutes = map(int, InputTime.split(":"))
-        Time1 = {"Hour: ": hour, "Minutes: ": minutes}
-        return Time1
+def date_input():
+    try:
+        date_entry = input("Input date in DD/MM/YYYY format: ")
+        day, month, year = map(int, date_entry.split("/"))
+        date = [day, month, year]
+        return date
+    except ValueError:
+        print("Incorrect format.")
 
 
 # #simple function that convert inputed date to day of week
-def check_date():
+def check_date(y, m, d):
     day_of_week = calendar.weekday(y, m, d)
     day_of_week_dict = {0: "Monday/Poniedzialek",
                         1: "Tuesday/Wtorek",
@@ -50,6 +41,8 @@ def check_date():
 #     count = godz_konc - godz_pocz
 #     print("Work time is / Czas pracy to:", count, "hours / godzin. ")
 #     return ilosc
+
+
 
 
 
