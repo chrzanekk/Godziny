@@ -28,11 +28,31 @@ def check_date(y, m, d):
                         4: "Friday/Piątek",
                         5: "Saturday/Sobota",
                         6: "Sunday/Niedziela"}
+    k = 0
     for k in day_of_week_dict:
         if k == day_of_week:
             # print(day_of_week_dict[k])
             break
     return day_of_week_dict[k]
+
+def hours(d1, d2, m1, m2, h1, h2, min1, min2):
+    hour_count = 0
+    if (d1 < d2 and m1 == m2) or (d1 > d2 and m1 < m2):
+        if min1 < min2:
+            hour_count = 24 + h2 - h1 + 0.5
+        elif min2 < min1:
+            hour_count = 24 + h2 - h1 - 0.5
+        elif min2 == min1:
+            hour_count = 24 + h2 - h1
+        return hour_count
+    elif d1 == d2 and m1 == m2:
+        if min1 < min2:
+            hour_count = h2 - h1 + 0.5
+        elif min2 < min1:
+            hour_count = h2 - h1 - 0.5
+        elif min2 == min1:
+            hour_count = h2 - h1
+        return hour_count
 
 
 print("HOUR COUNTER 2019 - by K. Chrzanowski")
@@ -73,6 +93,8 @@ end_day = date2[0]
 end_month = date2[1]
 end_hour = date2[3]
 end_min = date2[4]
+hours1 = hours(start_day, end_day, start_month, end_month, start_hour, end_hour, start_min, end_min)
+print("Ilość przepracowanych godzin: ", hours1)
 
 
 
