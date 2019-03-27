@@ -1,7 +1,7 @@
 #simple script to count work hours
-#now count only real time of work.
 #you can input date. i use it to check what day of week it is and coresponding to that day cout and addition to payment
-#final job is to count work hours with additional hours and add 50% and 100% extra payment
+#final versioncount work hours with additional hours and add 50% and 100% extra payment.
+
 
 import calendar
 import datetime
@@ -11,11 +11,22 @@ def date_time_input():
     try:
         date_entry = input("Input date and time in DD/MM/YYYY/HH/MM format: ")
         day, month, year, hour, minutes = map(int, date_entry.split("/"))
-        date_time = [day, month, year, hour, minutes]
-        return date_time
+        isValidDate = True
+        try:
+            datetime.datetime(int(year), int(month), int(day), int(hour), int(minutes))
+        except ValueError:
+            isValidDate = False
+        if(isValidDate):
+            print("Entered date and time is valid.")
+            date_time = [day, month, year, hour, minutes]
+            return date_time
+        else:
+            print("Entered date and time is not valid. Try again.")
+            pass
+
+
     except ValueError:
         print("Incorrect format.")
-
 
 
 # #simple function that convert inputed date to day of week
@@ -81,20 +92,24 @@ try:
 except TypeError:
     print("Check date/format and try again.")
 
-print("Start work at: ", what_day1)
-print("End work at: ", what_day2)
 
 #code for counting hours from date and time entered above.
-start_day = date1[0]
-start_month = date1[1]
-start_hour = date1[3]
-start_min = date1[4]
-end_day = date2[0]
-end_month = date2[1]
-end_hour = date2[3]
-end_min = date2[4]
-hours1 = hours(start_day, end_day, start_month, end_month, start_hour, end_hour, start_min, end_min)
-print("Ilość przepracowanych godzin: ", hours1)
+try:
+    print("Start work at: ", what_day1)
+    print("End work at: ", what_day2)
+    start_day = date1[0]
+    start_month = date1[1]
+    start_hour = date1[3]
+    start_min = date1[4]
+    end_day = date2[0]
+    end_month = date2[1]
+    end_hour = date2[3]
+    end_min = date2[4]
+    hours1 = hours(start_day, end_day, start_month, end_month, start_hour, end_hour, start_min, end_min)
+    print("Ilość przepracowanych godzin: ", hours1)
+except NameError:
+    print("ERROR! Something goes wrong. Check input data again.")
+
 
 
 
